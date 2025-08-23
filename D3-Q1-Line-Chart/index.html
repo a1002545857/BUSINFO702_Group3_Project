@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Share Percent Line Chart</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color-line {
+            width: 20px;
+            height: 3px;
+        }
+        .legend-color-point {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: -14px; /* Center point on the line */
+        }
+        .chart-container svg {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Green Share of Exports (2020–2024)</h1>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div style="display: flex; align-items: center;">
+                <div class="legend-color-line" style="background-color: #D55E00;"></div>
+                <div class="legend-color-point" style="background-color: #D55E00;"></div>
+            </div>
+            <span>China</span>
+        </div>
+        <div class="legend-item">
+            <div style="display: flex; align-items: center;">
+                <div class="legend-color-line" style="background-color: #0072B2;"></div>
+                <div class="legend-color-point" style="background-color: #0072B2;"></div>
+            </div>
+            <span>Other Five Eyes</span>
+        </div>
+    </div> 
+
+    <div class="chart-container">
+        <svg id="line-chart" width="800" height="500"></svg>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="linechart.js"></script>
+
+</body>
+</html>

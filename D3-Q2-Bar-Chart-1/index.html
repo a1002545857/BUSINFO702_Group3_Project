@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Green Export Increases Chart</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        .chart-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .chart-container {
+            flex: 1;
+            min-width: 500px;
+        }
+        /* Style for the axes */
+        .domain {
+            stroke: #888;
+        }
+        .tick line {
+            stroke: #ccc;
+        }
+        .tick text {
+            font-size: 12px; 
+        }
+        .notes-section {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 1000px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .notes-section h3 {
+            text-align: left;
+        }
+        .notes-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .notes-section li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Top 3 Products by Absolute Increase in Green Exports from Q1 2020 to Q4 2024</h1>
+        <div class="chart-wrapper">
+            <div class="chart-container">
+                <h2>China</h2>
+                <svg id="chart-china"></svg>
+            </div>
+            <div class="chart-container">
+                <h2>Other Five Eyes</h2>
+                <svg id="chart-feyes"></svg>
+            </div>
+        </div>
+
+        <div class="notes-section">
+            <h3>Notes: HTS Code Descriptions</h3>
+            <ul>
+                <li><strong>848180:</strong> Taps, cocks, valves and similar appliances for pipes, vats or the like, including thermostatically controlled valves, N.E.S.O.I.</li>
+                <li><strong>848310:</strong> Transmission shafts (including camshafts and crank shafts) and cranks</li>
+                <li><strong>842199:</strong> Parts for filtering or purifying machinery and apparatus for liquids or gases</li>
+                <li><strong>854442:</strong> Electric conductors, for a voltage not exceeding 1000 V, fitted with connectors, N.E.S.O.I.</li>
+                <li><strong>732690:</strong> Articles of iron or steel, N.E.S.O.I.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="barchart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastest Growing Green Exports Chart</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+        .figure-container {
+            text-align: center;
+        }
+        .chart-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .chart-subtitle {
+            font-size: 14px;
+            fill: #777;
+        }
+        .facet-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .axis-label {
+            font-size: 12px;
+        }
+        .tick text {
+            font-size: 12px;
+        }
+        .notes-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            max-width: 850px;
+            width: 100%;
+        }
+        .notes-section h3 {
+            margin-top: 0;
+            text-align: left;
+        }
+        .notes-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 12px;
+        }
+        .notes-section li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="figure-container">
+        <svg id="faceted-chart"></svg>
+    </div>
+
+    <div class="notes-section">
+        <h3>Notes: HTS Code Descriptions</h3>
+        <ul>
+            <li><strong>848310:</strong> Transmission shafts (including camshafts and crankshafts) and cranks</li>
+            <li><strong>890590:</strong> Light vessels, fire floats, floating cranes and other vessels with navigability not the main function, N.E.S.O.I.; Floating docks</li>
+            <li><strong>850511:</strong> Permanent magnets and articles intended to become permanent magnets after magnetization, made of metal</li>
+            <li><strong>842839:</strong> Continuous-action elevators and conveyors, for goods or materials, other than for underground use, N.E.S.O.I.</li>
+            <li><strong>841350:</strong> Reciprocating positive displacement pumps, N.E.S.O.I.</li>
+            <li><strong>903010:</strong> Instruments and apparatus for measuring or detecting ionizing radiations</li>
+        </ul>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="barchart.js"></script>
+
+</body>
+</html>
