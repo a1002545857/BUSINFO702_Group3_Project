@@ -1,0 +1,35 @@
+--Star Schema Code in Mermaid
+---
+config:
+  theme: default
+---
+erDiagram
+  Time {
+    INTEGER TimeKey PK
+    INTEGER Year
+    INTEGER Quarter
+    TEXT QuarterName
+  }
+  Countries {
+    INTEGER CountryKey PK
+    TEXT CountryName
+    TEXT Continent
+  }
+  Product {
+    INTEGER ProductKey PK
+    TEXT ProductHS6
+    TEXT ProductDescription
+    TEXT ProductHS4
+    TEXT ProductHS2
+    TEXT EnvironmentalCategory
+  }
+  TradeFacts {
+    INTEGER TradeID PK
+    INTEGER ProductKey FK
+    INTEGER CountryKey FK
+    INTEGER TimeKey FK
+    REAL     TradeValue
+  }
+  Countries||--o{ TradeFacts : "involves"
+  Time     ||--o{ TradeFacts : "occurs_at"
+  Product  ||--o{ TradeFacts : "of"
