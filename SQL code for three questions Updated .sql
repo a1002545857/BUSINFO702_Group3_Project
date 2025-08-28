@@ -1,4 +1,3 @@
-
 -- Query 1: Annual green share of U.S. exports (2020–2024)
 -- Groups: Four Partner Countries (AU, CA, NZ, UK) vs China
 WITH Annualized AS (
@@ -204,3 +203,4 @@ SELECT                                                                          
            , 2), 0))
   , 3) AS t_stat
 FROM stats;
+
