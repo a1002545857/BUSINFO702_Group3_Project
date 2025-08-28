@@ -62,7 +62,7 @@ minmax_quarters AS (                                                     -- Step
   SELECT MIN(Year*10+Quarter) AS MinYQ, MAX(Year*10+Quarter) AS MaxYQ    -- Formula: Encode Year+Quarter as (Year*10+Quarter) for easy comparison
   FROM green_filtered
 ),                                        
-compare_quarters AS (                                                    -- Step 4: Compute start (2020Q1) vs end (2024Q4) values per product and group
+compare_quarters AS (                                                    -- Step 4(a): Compute start (2020Q1) vs end (2024Q4) values per product and group
   SELECT
     gf.DestinationGroup,
     gf.HTSNumber,
@@ -71,6 +71,15 @@ compare_quarters AS (                                                    -- Step
   FROM green_filtered gf, minmax_quarters mm
   GROUP BY gf.DestinationGroup, gf.HTSNumber
 ),
+/* compare_quarters AS (                                                                   -- Step 4(b): Compute start (2020) vs end (2024) values per product and group
+    SELECT
+        gf.DestinationGroup,
+        gf.HTSNumber,
+        SUM(CASE WHEN gf.Year = 2020 THEN gf.TradeValue ELSE 0 END) AS StartValue,       -- New logic: Sum all quarters for 2020
+        SUM(CASE WHEN gf.Year = 2024 THEN gf.TradeValue ELSE 0 END) AS EndValue          -- New logic: Sum all quarters for 2024
+    FROM green_filtered gf
+    GROUP BY gf.DestinationGroup, gf.HTSNumber
+), */
 with_growth AS (                                                        -- Step 5: Calculate growth metrics
   SELECT
     cq.DestinationGroup,
@@ -203,4 +212,5 @@ SELECT                                                                          
            , 2), 0))
   , 3) AS t_stat
 FROM stats;
+
 
